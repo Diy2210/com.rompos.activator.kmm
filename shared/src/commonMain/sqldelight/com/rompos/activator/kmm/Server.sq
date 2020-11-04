@@ -1,0 +1,30 @@
+CREATE TABLE server (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    url TEXT,
+    token TEXT
+);
+
+selectAll:
+SELECT * FROM server;
+
+insert:
+INSERT INTO server (
+    title,
+    url,
+    token
+)
+VALUES (?,?,?);
+
+update:
+UPDATE server SET
+    title = ?,
+    url = ?,
+    token = ?
+WHERE ID = ?;
+
+selectByID:
+SELECT * FROM server WHERE ID = ?;
+
+deleteByID:
+DELETE FROM server WHERE ID = ?;

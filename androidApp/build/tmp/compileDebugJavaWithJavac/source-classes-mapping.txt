@@ -1,0 +1,6 @@
+com/rompos/activator/kmm/androidApp/BuildConfig.java
+ com.rompos.activator.kmm.androidApp.BuildConfig
+com/rompos/activator/kmm/androidApp/databinding/ServerListItemBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.ServerListItemBinding
+com/rompos/activator/kmm/androidApp/DataBindingTriggerClass.java
+ com.rompos.activator.kmm.androidApp.DataBindingTriggerClass

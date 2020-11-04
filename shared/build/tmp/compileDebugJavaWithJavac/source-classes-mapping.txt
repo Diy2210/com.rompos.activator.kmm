@@ -1,0 +1,2 @@
+com/rompos/activator/kmm/android/BuildConfig.java
+ com.rompos.activator.kmm.android.BuildConfig

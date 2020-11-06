@@ -5,6 +5,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
     id("com.squareup.sqldelight")
+    id("kotlinx-serialization")
 //    id("kotlinx-serialization")
 }
 group = "com.rompos.activator.kmm"
@@ -33,11 +34,12 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api("dev.icerock.moko:mvvm:0.7.0")
                 implementation("com.squareup.sqldelight:runtime:1.4.3")
                 implementation("io.ktor:ktor-client-core:1.3.2")
 //                implementation("dev.icerock.moko:mvvm:0.8.0")
-                api("dev.icerock.moko:mvvm:0.7.0")
                 implementation("org.kodein.di:kodein-di:7.0.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc")
             }
         }
         val commonTest by getting {

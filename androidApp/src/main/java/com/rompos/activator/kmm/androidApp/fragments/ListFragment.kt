@@ -7,24 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.get
 import androidx.lifecycle.lifecycleScope
 import com.rompos.activator.kmm.Server
 import com.rompos.activator.kmm.androidApp.R
 import com.rompos.activator.kmm.androidApp.Utils
 import com.rompos.activator.kmm.androidApp.adapters.ServersAdapter
+import com.rompos.activator.kmm.androidApp.databinding.FragmentListBinding
 import com.rompos.activator.kmm.shared.model.ListViewModel
 import kotlinx.coroutines.launch
-import kotlinx.android.synthetic.main.fragment_list.*
-import kotlinx.android.synthetic.main.fragment_list.view.*
 
 open class ListFragment : Fragment() {
+    private var _viewBinding: FragmentListBinding? = null
+    private val viewBinding get() = _viewBinding!!
+
     lateinit var transaction: FragmentTransaction
     lateinit var adapter: ServersAdapter
 
     val bundle = Bundle()
     var viewModel = ListViewModel()
+//    val viewModel: ListViewModel? = null
+//    val viewModel: ListViewModel by viewModels()
     val editServerFragment = EditServerFragment()
     val pluginFragment = PluginFragment()
 
@@ -32,11 +34,16 @@ open class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
-        val view = inflater.inflate(R.layout.fragment_list, container, false)
+        _viewBinding = FragmentListBinding.inflate(inflater, container, false)
+        val view = viewBinding.root
+
+//        viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
+//        viewModel = ViewModelProvider.NewInstanceFactory().create(ListViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+//        val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         lifecycleScope.launch {
-            view.progressBar.visibility = View.VISIBLE
+            viewBinding.progressBar.visibility = View.VISIBLE
             viewModel.getInitList()
         }.also {
             adapter = ServersAdapter(
@@ -49,8 +56,8 @@ open class ListFragment : Fragment() {
                         transaction.replace(R.id.fragment_list_view, pluginFragment)
                         transaction.disallowAddToBackStack()
                         transaction.commit()
-                        view.servers_item.isVisible = false
-                        view.fab.isVisible = false
+                        viewBinding.serversItem.visibility = View.GONE
+                        viewBinding.fab.visibility = View.GONE
                     }
                 },
                 object : ServersAdapter.EditClickCallback {
@@ -61,8 +68,8 @@ open class ListFragment : Fragment() {
                         transaction.replace(R.id.fragment_list_view, editServerFragment)
                         transaction.disallowAddToBackStack()
                         transaction.commit()
-                        view.servers_item.isVisible = false
-                        view.fab.isVisible = false
+                        viewBinding.serversItem.visibility = View.GONE
+                        viewBinding.fab.visibility = View.GONE
                     }
                 },
                 object :
@@ -75,7 +82,7 @@ open class ListFragment : Fragment() {
                                 viewModel.delete(item)
                                 viewModel.reload()
                                 adapter.notifyDataSetChanged()
-                                Utils.snackMsg(fragment_list_view, getString(R.string.deleted))
+                                Utils.snackMsg(view, getString(R.string.deleted))
                             }
                             .setNegativeButton(R.string.no) { _, _ ->
                                 // nothing to do
@@ -84,32 +91,39 @@ open class ListFragment : Fragment() {
                     }
                 })
 
-            view.servers_item.adapter = adapter
-            view.progressBar.visibility = View.GONE
+            viewBinding.serversItem.adapter = adapter
+            viewBinding.progressBar.visibility = View.GONE
+
         }
 
         viewModel.getInitList().addObserver {
             adapter.refreshList(it)
         }
 
-        view.swipeContainer.setOnRefreshListener {
+        viewBinding.swipeContainer.setOnRefreshListener {
             viewModel.reload()
             adapter.items = viewModel.list
             adapter.notifyDataSetChanged()
-            if (view.swipeContainer.isRefreshing) {
-                view.swipeContainer.isRefreshing = false
+            if (viewBinding.swipeContainer.isRefreshing) {
+                viewBinding.swipeContainer.isRefreshing = false
             }
         }
 
-        view.fab.setOnClickListener {
-            transaction = activity!!.supportFragmentManager.beginTransaction()
+        viewBinding.fab.setOnClickListener {
+            transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_list_view, EditServerFragment())
             transaction.disallowAddToBackStack()
             transaction.commit()
-            view.servers_item.isVisible = false
-            view.fab.isVisible = false
+            viewBinding.serversItem.visibility = View.GONE
+            viewBinding.fab.visibility = View.GONE
         }
 
         return view
+    }
+
+    // Clear View Binding
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _viewBinding = null
     }
 }

@@ -1,6 +1,26 @@
 [
     {
+        "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_edit_server.xml",
+        "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/fragment_edit_server.xml"
+    },
+    {
+        "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splashscreen.xml",
+        "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/activity_splashscreen.xml"
+    },
+    {
+        "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_plugin.xml",
+        "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/fragment_plugin.xml"
+    },
+    {
         "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/server_list_item.xml",
         "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/server_list_item.xml"
+    },
+    {
+        "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_list.xml",
+        "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/fragment_list.xml"
+    },
+    {
+        "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/activity_main.xml"
     }
 ]

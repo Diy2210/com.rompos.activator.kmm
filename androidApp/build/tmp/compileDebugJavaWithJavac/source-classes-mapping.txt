@@ -1,6 +1,37 @@
+com/rompos/activator/kmm/androidApp/DataBindingTriggerClass.java
+ com.rompos.activator.kmm.androidApp.DataBindingTriggerClass
+dev/icerock/moko/mvvm/BR.java
+ dev.icerock.moko.mvvm.BR
+com/rompos/activator/kmm/androidApp/databinding/ActivitySplashscreenBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.ActivitySplashscreenBinding
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/rompos/activator/kmm/androidApp/databinding/FragmentPluginBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.FragmentPluginBinding
+com/rompos/activator/kmm/androidApp/databinding/ActivityMainBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.ActivityMainBinding
+com/rompos/activator/kmm/androidApp/databinding/ServerListItemBindingImpl.java
+ com.rompos.activator.kmm.androidApp.databinding.ServerListItemBindingImpl
 com/rompos/activator/kmm/androidApp/BuildConfig.java
  com.rompos.activator.kmm.androidApp.BuildConfig
 com/rompos/activator/kmm/androidApp/databinding/ServerListItemBinding.java
  com.rompos.activator.kmm.androidApp.databinding.ServerListItemBinding
-com/rompos/activator/kmm/androidApp/DataBindingTriggerClass.java
- com.rompos.activator.kmm.androidApp.DataBindingTriggerClass
+com/rompos/activator/kmm/androidApp/DataBinderMapperImpl.java
+ com.rompos.activator.kmm.androidApp.DataBinderMapperImpl
+ com.rompos.activator.kmm.androidApp.DataBinderMapperImpl$InnerBrLookup
+ com.rompos.activator.kmm.androidApp.DataBinderMapperImpl$InnerLayoutIdLookup
+com/rompos/activator/kmm/androidApp/databinding/FragmentListBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.FragmentListBinding
+com/rompos/activator/kmm/androidApp/BR.java
+ com.rompos.activator.kmm.androidApp.BR
+com/rompos/activator/kmm/androidApp/databinding/FragmentEditServerBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBinding
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/rompos/activator/kmm/androidApp/databinding/FragmentEditServerBindingImpl.java
+ com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBindingImpl
+ com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBindingImpl$1
+ com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBindingImpl$2
+ com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBindingImpl$3

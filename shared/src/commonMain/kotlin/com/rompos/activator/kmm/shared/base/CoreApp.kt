@@ -20,8 +20,7 @@ lateinit var myApp: CoreApp
 
 fun initApplication(sqlDriver: SqlDriver? = null) {
     if (!isInitialized) {
-        myApp =
-            CoreApp(sqlDriver ?: getSqlDriver("servers.db"))
+        myApp = CoreApp(sqlDriver ?: getSqlDriver("servers.db"))
         isInitialized = true
     }
 }

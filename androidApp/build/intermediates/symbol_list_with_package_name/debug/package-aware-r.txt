@@ -748,6 +748,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -1680,6 +1681,7 @@ id bottom
 id bounce
 id buttonPanel
 id cache_measures
+id cancelBtn
 id cancel_action
 id cancel_button
 id center
@@ -1737,6 +1739,7 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editView
 id edit_query
 id end
 id end_padder
@@ -1866,6 +1869,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saveBtn
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -1889,6 +1893,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id serverTitle
+id serverToken
 id serverUrl
 id servers_item
 id shortcut
@@ -1947,7 +1952,6 @@ id textView
 id textWatcher
 id text_input_end_icon
 id text_input_start_icon
-id text_view
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2061,7 +2065,9 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_edit_server
 layout fragment_list
+layout fragment_plugin
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -3036,6 +3042,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

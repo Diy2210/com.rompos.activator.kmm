@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-android")
     id("com.squareup.sqldelight")
+    id("kotlinx-serialization")
     id("kotlin-kapt")
 }
 group = "com.rompos.activator.kmm"
@@ -16,7 +17,7 @@ repositories {
 }
 dependencies {
     implementation(project(":shared"))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
     implementation("com.google.android.material:material:1.2.1")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
@@ -63,9 +64,5 @@ android {
     }
     packagingOptions {
         pickFirst("META-INF/*.kotlin_module")
-    }
-    kapt {
-        generateStubs = true
-        correctErrorTypes = true
     }
 }

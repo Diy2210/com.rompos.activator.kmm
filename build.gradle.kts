@@ -1,5 +1,4 @@
 buildscript {
-    val kotlin_version by extra("1.4.10")
     repositories {
         gradlePluginPortal()
         jcenter()
@@ -9,8 +8,8 @@ buildscript {
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10")
-        classpath("com.android.tools.build:gradle:4.1.0")
-        classpath ("com.squareup.sqldelight:gradle-plugin:1.4.3")
+        classpath("com.android.tools.build:gradle:4.1.1")
+        classpath ("com.squareup.sqldelight:gradle-plugin:1.4.4")
         classpath ("org.jetbrains.kotlin:kotlin-serialization:1.4.10")
     }
     allprojects {

@@ -4,7 +4,7 @@
             "outputFile": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/73c0afb8f729dfaa06b26e788a0f3289/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/84cc137160571404b8bae420fdd1b072/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

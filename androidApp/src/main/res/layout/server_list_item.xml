@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
+    <data class="ServerListItemBinding">
         <variable
             name="item"
             type="com.rompos.activator.kmm.shared.model.ServerViewModel"/>

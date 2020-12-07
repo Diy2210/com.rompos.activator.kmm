@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/res/merged/debug/layout_plugin_list_item.xml.flat",
+        "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/layout/plugin_list_item.xml"
+    },
+    {
         "merged": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/res/merged/debug/drawable_app_logo.xml.flat",
         "source": "/Users/admin/Downloads/ActivatorKMM/androidApp/src/main/res/drawable/app_logo.xml"
     },

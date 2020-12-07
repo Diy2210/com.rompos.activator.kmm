@@ -4,7 +4,7 @@
             "outputFile": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/22f9dace8ee36fcfdf73a51471330652/media-1.0.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/9921681255c52bcc70c7f1c1c51ab70d/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/73c0afb8f729dfaa06b26e788a0f3289/appcompat-1.2.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/84cc137160571404b8bae420fdd1b072/appcompat-1.2.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

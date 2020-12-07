@@ -2,10 +2,10 @@ package com.rompos.activator.kmm.shared.api
 
 import com.rompos.activator.kmm.Server
 import com.rompos.activator.kmm.shared.model.PluginModel
-import io.ktor.client.*
-import io.ktor.client.request.*
-import io.ktor.client.request.forms.*
-import io.ktor.http.*
+import io.ktor.client.request.forms.submitForm
+import io.ktor.http.Parameters
+import io.ktor.client.HttpClient
+import io.ktor.client.request.get
 
 class PluginActivatorApi {
     private val client = HttpClient()

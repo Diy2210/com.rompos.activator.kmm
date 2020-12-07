@@ -74,7 +74,7 @@ private class ServerQueriesImpl(
   }
 
   override fun selectAll(): Query<Server> = selectAll { ID, title, url, token ->
-    com.rompos.activator.kmm.Server(
+    Server(
       ID,
       title,
       url,
@@ -96,9 +96,9 @@ private class ServerQueriesImpl(
     )
   }
 
-  override fun selectByID(ID: Long): Query<Server> = selectByID(ID) { ID, title, url, token ->
-    com.rompos.activator.kmm.Server(
-      ID,
+  override fun selectByID(ID: Long): Query<Server> = selectByID(ID) { ID_, title, url, token ->
+    Server(
+      ID_,
       title,
       url,
       token

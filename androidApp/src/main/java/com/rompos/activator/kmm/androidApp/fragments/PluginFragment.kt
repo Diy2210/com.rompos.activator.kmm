@@ -9,14 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.lifecycleScope
 import com.rompos.activator.kmm.Server
 import com.rompos.activator.kmm.androidApp.R
 import com.rompos.activator.kmm.androidApp.Utils
 import com.rompos.activator.kmm.androidApp.activities.MainActivity
 import com.rompos.activator.kmm.androidApp.adapters.PluginsAdapter
-import com.rompos.activator.kmm.androidApp.databinding.FragmentListBinding
 import com.rompos.activator.kmm.androidApp.databinding.FragmentPluginBinding
 import com.rompos.activator.kmm.shared.base.myApp
 import com.rompos.activator.kmm.shared.model.PluginViewModel

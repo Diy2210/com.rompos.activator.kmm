@@ -1,3 +1,5 @@
+com/rompos/activator/kmm/androidApp/databinding/PluginListItemBindingImpl.java
+ com.rompos.activator.kmm.androidApp.databinding.PluginListItemBindingImpl
 com/rompos/activator/kmm/androidApp/DataBindingTriggerClass.java
  com.rompos.activator.kmm.androidApp.DataBindingTriggerClass
 dev/icerock/moko/mvvm/BR.java
@@ -10,12 +12,17 @@ androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/rompos/activator/kmm/androidApp/databinding/FragmentPluginBinding.java
  com.rompos.activator.kmm.androidApp.databinding.FragmentPluginBinding
+com/rompos/activator/kmm/androidApp/generated/callback/OnCheckedChangeListener.java
+ com.rompos.activator.kmm.androidApp.generated.callback.OnCheckedChangeListener
+ com.rompos.activator.kmm.androidApp.generated.callback.OnCheckedChangeListener$Listener
 com/rompos/activator/kmm/androidApp/databinding/ActivityMainBinding.java
  com.rompos.activator.kmm.androidApp.databinding.ActivityMainBinding
 com/rompos/activator/kmm/androidApp/databinding/ServerListItemBindingImpl.java
  com.rompos.activator.kmm.androidApp.databinding.ServerListItemBindingImpl
 com/rompos/activator/kmm/androidApp/BuildConfig.java
  com.rompos.activator.kmm.androidApp.BuildConfig
+com/rompos/activator/kmm/androidApp/databinding/PluginListItemBinding.java
+ com.rompos.activator.kmm.androidApp.databinding.PluginListItemBinding
 com/rompos/activator/kmm/androidApp/databinding/ServerListItemBinding.java
  com.rompos.activator.kmm.androidApp.databinding.ServerListItemBinding
 com/rompos/activator/kmm/androidApp/DataBinderMapperImpl.java

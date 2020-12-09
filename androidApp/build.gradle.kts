@@ -21,7 +21,8 @@ dependencies {
     implementation("com.google.android.material:material:1.2.1")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc")
+//    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
 
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
@@ -39,7 +40,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
 
     implementation("com.squareup.sqldelight:android-driver:1.4.3")
-    implementation("org.kodein.di:kodein-di:7.0.0")
+    implementation("org.kodein.di:kodein-di:7.1.0")
 }
 android {
     compileSdkVersion(30)

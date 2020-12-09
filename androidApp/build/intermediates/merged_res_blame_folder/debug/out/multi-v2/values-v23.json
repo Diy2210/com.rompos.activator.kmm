@@ -4,7 +4,7 @@
             "outputFile": "/Users/admin/Downloads/ActivatorKMM/androidApp/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/27fe7ee7cfeb8316bdb5680ccedf6073/material-1.2.1/res/values-v23/values-v23.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/9c31d91491ebeafcc0cef1e429803e78/material-1.2.1/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/8a3d13b8f57f2a628c00347ee2b64c0c/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/6e17fa2cecd78d96c2d063854d11d336/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/84cc137160571404b8bae420fdd1b072/appcompat-1.2.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/admin/.gradle/caches/transforms-2/files-2.1/d3d8fbdfea528e3646ceafc6b300cada/appcompat-1.2.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

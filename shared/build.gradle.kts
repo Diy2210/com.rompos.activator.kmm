@@ -34,8 +34,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api("dev.icerock.moko:mvvm:0.8.0")
-                implementation("dev.icerock.moko:resources:0.13.0")
-                implementation("dev.icerock.moko:graphics:0.4.0")
+                implementation("dev.icerock.moko:resources:0.13.1")
+                implementation("dev.icerock.moko:graphics:0.5.0")
                 implementation("dev.icerock.moko:parcelize:0.5.0")
 
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")

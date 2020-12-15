@@ -34,14 +34,16 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api("dev.icerock.moko:mvvm:0.8.0")
+                implementation("dev.icerock.moko:resources:0.13.0")
+                implementation("dev.icerock.moko:graphics:0.4.0")
+                implementation("dev.icerock.moko:parcelize:0.5.0")
+
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-//                implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
-                implementation("org.kodein.di:kodein-di:7.1.0")
                 implementation("com.squareup.sqldelight:runtime:1.4.4")
+                implementation("org.kodein.di:kodein-di:7.1.0")
                 implementation("io.ktor:ktor-client-core:1.4.0")
                 implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-//                implementation("dev.icerock.moko:mvvm:0.8.0")
             }
         }
         val commonTest by getting {
@@ -53,8 +55,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("com.google.android.material:material:1.2.1")
-                implementation("com.squareup.sqldelight:android-driver:1.4.3")
-                implementation("io.ktor:ktor-client-android:1.4.0")
+                implementation("com.squareup.sqldelight:android-driver:1.4.4")
             }
         }
         val androidTest by getting {
@@ -65,8 +66,7 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
-                implementation("com.squareup.sqldelight:native-driver:1.4.3")
-                implementation("io.ktor:ktor-client-ios:1.4.0")
+                implementation("com.squareup.sqldelight:native-driver:1.4.4")
             }
         }
         val iosTest by getting
@@ -103,12 +103,5 @@ val packForXcode by tasks.creating(Sync::class) {
     val targetDir = File(buildDir, "xcode-frameworks")
     from({ framework.outputDirectory })
     into(targetDir)
-
-//    doLast {
-//        val gradlew = File(targetDir, "gradlew")
-//        gradlew.writeText("#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n")
-//        gradlew.setExecutable(true)
-//    }
-
 }
 tasks.getByName("build").dependsOn(packForXcode)

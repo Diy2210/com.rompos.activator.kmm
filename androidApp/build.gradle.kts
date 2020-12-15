@@ -38,8 +38,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+//    kapt("androidx.lifecycle:lifecycle-compiler:2.2.0")
+//    kapt("groupId:artifactId:1.4.21")
 
-    implementation("com.squareup.sqldelight:android-driver:1.4.3")
+    implementation("com.squareup.sqldelight:android-driver:1.4.4")
     implementation("org.kodein.di:kodein-di:7.1.0")
 }
 android {
@@ -65,5 +67,9 @@ android {
     }
     packagingOptions {
         pickFirst("META-INF/*.kotlin_module")
+    }
+    kapt {
+        generateStubs = true
+        correctErrorTypes = true
     }
 }

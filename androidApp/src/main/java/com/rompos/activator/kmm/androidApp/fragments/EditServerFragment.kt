@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.rompos.activator.kmm.androidApp.R
 import com.rompos.activator.kmm.androidApp.Utils
@@ -17,6 +19,7 @@ import com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBinding
 import com.rompos.activator.kmm.shared.base.myApp
 import com.rompos.activator.kmm.shared.model.ServerFormViewModel
 import com.rompos.activator.kmm.shared.repository.ServersRepository
+import dev.icerock.moko.mvvm.getViewModel
 import kotlinx.coroutines.launch
 import org.kodein.di.instance
 
@@ -30,7 +33,16 @@ open class EditServerFragment : Fragment() {
 
     private val repository: ServersRepository by myApp.kodein.instance()
     private var serverFormViewModel = ServerFormViewModel()
+//    private var serverFormViewModel: ServerFormViewModel by viewModels()
+//    private val serverFormViewModel: ServerFormViewModel? = null
     private var serverId: Long = 0
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        serverFormViewModel = activity?.run {
+//            ViewModelProviders.of(this)[ServerFormViewModel::class.java]
+//        } ?: throw Exception("Invalid Activity")
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +51,14 @@ open class EditServerFragment : Fragment() {
         _viewBinding = FragmentEditServerBinding.inflate(inflater, container, false)
         val view = viewBinding.root
 
+//        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ServerFormViewModel::class.java)
+//        val viewModel = ViewModelProvider(this).get(ServerFormViewModel::class.java)
+
         val dataBinding : FragmentEditServerBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit_server, container, false)
+//        dataBinding.item = serverFormViewModel
+
+        dataBinding.lifecycleOwner = this
+//        serverFormViewModel = getViewModel()
         dataBinding.item = serverFormViewModel
 
         // Dispatcher Back Step to Main

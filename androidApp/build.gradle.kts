@@ -6,15 +6,15 @@ plugins {
     id("kotlinx-serialization")
     id("kotlin-kapt")
 }
-group = "com.rompos.activator.kmm"
-version = "1.0"
-
-repositories {
-    gradlePluginPortal()
-    google()
-    jcenter()
-    mavenCentral()
-}
+//group = "com.rompos.activator.kmm"
+//version = "1.0"
+//
+//repositories {
+//    gradlePluginPortal()
+//    google()
+//    jcenter()
+//    mavenCentral()
+//}
 dependencies {
     implementation(project(":shared"))
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
@@ -59,8 +59,8 @@ android {
         }
     }
     buildFeatures {
-        dataBinding = true
         viewBinding = true
+        dataBinding = true
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()

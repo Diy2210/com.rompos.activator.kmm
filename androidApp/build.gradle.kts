@@ -20,7 +20,7 @@ dependencies {
 //    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
     implementation("com.google.android.material:material:1.2.1")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
 //    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
 

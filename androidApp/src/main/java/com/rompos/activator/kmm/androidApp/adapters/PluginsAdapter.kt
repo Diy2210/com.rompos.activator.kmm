@@ -2,7 +2,6 @@ package com.rompos.activator.kmm.androidApp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-//import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.rompos.activator.kmm.Server
 import com.rompos.activator.kmm.androidApp.databinding.PluginListItemBinding

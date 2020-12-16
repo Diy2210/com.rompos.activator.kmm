@@ -33,8 +33,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api("dev.icerock.moko:mvvm:0.8.0")
-                implementation("dev.icerock.moko:resources:0.13.1")
+                api("dev.icerock.moko:mvvm:0.8.1")
+                implementation("dev.icerock.moko:resources:0.13.2")
                 implementation("dev.icerock.moko:graphics:0.5.0")
                 implementation("dev.icerock.moko:parcelize:0.5.0")
 
@@ -56,6 +56,7 @@ kotlin {
             dependencies {
                 implementation("com.google.android.material:material:1.2.1")
                 implementation("com.squareup.sqldelight:android-driver:1.4.4")
+                implementation("io.ktor:ktor-client-android:1.4.0")
             }
         }
         val androidTest by getting {
@@ -67,6 +68,7 @@ kotlin {
         val iosMain by getting {
             dependencies {
                 implementation("com.squareup.sqldelight:native-driver:1.4.4")
+                implementation("io.ktor:ktor-client-ios:1.4.0")
             }
         }
         val iosTest by getting

@@ -40,8 +40,8 @@ class ListViewModel : ViewModel() {
             repository.delete(item.ID).also {
 //                adapter.items = repository.getAll()
 //                adapter.notifyDataSetChanged()
-            }
-        } catch (e: Exception) {
+                }
+            } catch (e: Exception) {
         }
     }
 }

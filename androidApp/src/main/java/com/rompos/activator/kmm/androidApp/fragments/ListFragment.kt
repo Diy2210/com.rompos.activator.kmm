@@ -25,8 +25,6 @@ open class ListFragment : Fragment() {
 
     val bundle = Bundle()
     var viewModel = ListViewModel()
-//    val viewModel: ListViewModel? = null
-//    val viewModel: ListViewModel by viewModels()
     val editServerFragment = EditServerFragment()
     val pluginFragment = PluginFragment()
 
@@ -36,11 +34,6 @@ open class ListFragment : Fragment() {
     ): View? {
         _viewBinding = FragmentListBinding.inflate(inflater, container, false)
         val view = viewBinding.root
-
-//        viewModel = ViewModelProviders.of(this).get(ListViewModel::class.java)
-//        viewModel = ViewModelProvider.NewInstanceFactory().create(ListViewModel::class.java)
-//        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
-//        val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         lifecycleScope.launch {
             viewBinding.progressBar.visibility = View.VISIBLE
@@ -117,7 +110,6 @@ open class ListFragment : Fragment() {
             viewBinding.serversItem.visibility = View.GONE
             viewBinding.fab.visibility = View.GONE
         }
-
         return view
     }
 

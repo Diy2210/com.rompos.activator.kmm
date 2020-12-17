@@ -54,6 +54,9 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlin:kotlin-stdlib")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
                 implementation("com.google.android.material:material:1.2.1")
                 implementation("com.squareup.sqldelight:android-driver:1.4.4")
                 implementation("io.ktor:ktor-client-android:1.4.0")
@@ -67,6 +70,7 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.7")
                 implementation("com.squareup.sqldelight:native-driver:1.4.4")
                 implementation("io.ktor:ktor-client-ios:1.4.0")
             }
@@ -80,11 +84,11 @@ sqldelight {
     }
 }
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(30)
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(29)
+        minSdkVersion(26)
+        targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
     }

@@ -6,44 +6,7 @@ plugins {
     id("kotlinx-serialization")
     id("kotlin-kapt")
 }
-//group = "com.rompos.activator.kmm"
-//version = "1.0"
-//
-//repositories {
-//    gradlePluginPortal()
-//    google()
-//    jcenter()
-//    mavenCentral()
-//}
-dependencies {
-    implementation(project(":shared"))
-//    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("com.google.android.material:material:1.2.1")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-//    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
-
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.activity:activity-ktx:1.1.0")
-    implementation("androidx.fragment:fragment-ktx:1.2.5")
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
-//    kapt("androidx.lifecycle:lifecycle-compiler:2.2.0")
-//    kapt("groupId:artifactId:1.4.21")
-
-    implementation("com.squareup.sqldelight:android-driver:1.4.4")
-    implementation("org.kodein.di:kodein-di:7.1.0")
-}
 android {
     compileSdkVersion(30)
     defaultConfig {
@@ -72,4 +35,31 @@ android {
         generateStubs = true
         correctErrorTypes = true
     }
+}
+
+dependencies {
+    implementation(project(":shared"))
+    implementation("com.google.android.material:material:1.2.1")
+
+    implementation("androidx.core:core-ktx:1.3.2")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.activity:activity-ktx:1.1.0")
+    implementation("androidx.fragment:fragment-ktx:1.2.5")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+
+
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+
+    implementation("com.squareup.sqldelight:android-driver:1.4.4")
+    implementation("org.kodein.di:kodein-di:7.1.0")
 }

@@ -32,12 +32,12 @@ class PluginsAdapter(
         holder.bind(items.value[position])
     }
 
-    inner class ItemTableViewHolder(private val pluginListItemBinding: PluginListItemBinding) : RecyclerView.ViewHolder(pluginListItemBinding.root) {
+    inner class ItemTableViewHolder(private val binding: PluginListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: PluginModel) {
-            pluginListItemBinding.item = item
-            pluginListItemBinding.server = server
-            pluginListItemBinding.handler = PluginViewModel()
-            pluginListItemBinding.executePendingBindings()
+            binding.item = item
+            binding.server = server
+            binding.handler = PluginViewModel()
+            binding.executePendingBindings()
         }
     }
 }

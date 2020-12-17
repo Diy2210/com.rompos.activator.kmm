@@ -15,10 +15,10 @@ class ServersAdapter(
     private val clickDeleteItemCallback: DeleteClickCallback
 ) : RecyclerView.Adapter<ServersAdapter.ServerViewHolder>() {
 
-    inner class ServerViewHolder(private val serverListItemBinding: ServerListItemBinding) : RecyclerView.ViewHolder(serverListItemBinding.root) {
+    inner class ServerViewHolder(private val binding: ServerListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ServerViewModel) {
-            serverListItemBinding.item = item
-            serverListItemBinding.executePendingBindings()
+            binding.item = item
+            binding.executePendingBindings()
             itemView.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) clickItemCallback.onItemClicked(items[adapterPosition])
             }

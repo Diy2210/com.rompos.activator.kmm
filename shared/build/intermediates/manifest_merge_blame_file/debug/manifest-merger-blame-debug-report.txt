@@ -5,9 +5,9 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="24"
+8        android:minSdkVersion="26"
 8-->/Users/admin/Downloads/ActivatorKMM/shared/src/androidMain/AndroidManifest.xml
-9        android:targetSdkVersion="29" />
+9        android:targetSdkVersion="30" />
 9-->/Users/admin/Downloads/ActivatorKMM/shared/src/androidMain/AndroidManifest.xml
 10
 11</manifest>

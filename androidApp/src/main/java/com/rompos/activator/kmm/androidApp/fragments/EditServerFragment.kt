@@ -9,8 +9,6 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.rompos.activator.kmm.androidApp.R
 import com.rompos.activator.kmm.androidApp.Utils
@@ -19,7 +17,6 @@ import com.rompos.activator.kmm.androidApp.databinding.FragmentEditServerBinding
 import com.rompos.activator.kmm.shared.base.myApp
 import com.rompos.activator.kmm.shared.model.ServerFormViewModel
 import com.rompos.activator.kmm.shared.repository.ServersRepository
-import dev.icerock.moko.mvvm.getViewModel
 import kotlinx.coroutines.launch
 import org.kodein.di.instance
 
@@ -27,22 +24,12 @@ const val EDIT_MODEL = "editModel"
 const val EDIT_MODEL_ID = "editModelId"
 
 open class EditServerFragment : Fragment() {
-
     private var _viewBinding: FragmentEditServerBinding? = null
     private val viewBinding get() = _viewBinding!!
 
     private val repository: ServersRepository by myApp.kodein.instance()
     private var serverFormViewModel = ServerFormViewModel()
-//    private var serverFormViewModel: ServerFormViewModel by viewModels()
-//    private val serverFormViewModel: ServerFormViewModel? = null
     private var serverId: Long = 0
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        serverFormViewModel = activity?.run {
-//            ViewModelProviders.of(this)[ServerFormViewModel::class.java]
-//        } ?: throw Exception("Invalid Activity")
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,15 +38,9 @@ open class EditServerFragment : Fragment() {
         _viewBinding = FragmentEditServerBinding.inflate(inflater, container, false)
         val view = viewBinding.root
 
-//        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ServerFormViewModel::class.java)
-//        val viewModel = ViewModelProvider(this).get(ServerFormViewModel::class.java)
-
-        val dataBinding : FragmentEditServerBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit_server, container, false)
-//        dataBinding.item = serverFormViewModel
-
-        dataBinding.lifecycleOwner = this
-//        serverFormViewModel = getViewModel()
-        dataBinding.item = serverFormViewModel
+        val binding : FragmentEditServerBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit_server, container, false)
+//        binding.lifecycleOwner = this
+        binding.item = serverFormViewModel
 
         // Dispatcher Back Step to Main
         activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
@@ -88,7 +69,7 @@ open class EditServerFragment : Fragment() {
             }
         }
 
-        dataBinding.item = serverFormViewModel
+        binding.item = serverFormViewModel
 
         viewBinding.cancelBtn.setOnClickListener {
             toMain()

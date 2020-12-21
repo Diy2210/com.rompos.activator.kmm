@@ -110,17 +110,17 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/admi
 	android:icon
 		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:12:9-42
 	android:allowBackup
-		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:9:9-36
+		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:9:9-35
 	android:theme
 		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:11:9-40
 	android:name
-		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:8:9-28
+		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:8:9-63
 activity#com.rompos.activator.kmm.androidApp.activities.SplashscreenActivity
 ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:15:9-22:20
 	android:theme
 		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:17:13-56
 	android:name
-		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:16:13-60
+		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:16:13-95
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:18:13-21:29
 action#android.intent.action.MAIN
@@ -132,9 +132,9 @@ ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManife
 	android:name
 		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:20:27-74
 activity#com.rompos.activator.kmm.androidApp.activities.MainActivity
-ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:23:9-60
+ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:23:9-95
 	android:name
-		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:23:19-58
+		ADDED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml:23:19-93
 uses-sdk
 INJECTED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/admin/Downloads/ActivatorKMM/androidApp/src/main/AndroidManifest.xml

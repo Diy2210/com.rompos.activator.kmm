@@ -39,7 +39,6 @@ open class EditServerFragment : Fragment() {
         val view = viewBinding.root
 
         val binding : FragmentEditServerBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_edit_server, container, false)
-//        binding.lifecycleOwner = this
         binding.item = serverFormViewModel
 
         // Dispatcher Back Step to Main

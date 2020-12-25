@@ -3,12 +3,14 @@ import shared
 
 struct ContentView: View {
     
+    @State var showSecondView = false
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .trailing) {
                 List(Servers.serverList) { item in
                     NavigationLink(destination:
-                        ServerDetailsView(item: item)) {
+                        ServerDetailsView(item: item),isActive : self.$showSecondView) {
                             ListView(item: item)
                     }
                 }

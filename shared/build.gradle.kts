@@ -40,8 +40,9 @@ kotlin {
 
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
-                implementation("com.squareup.sqldelight:runtime:1.4.4")
                 implementation("org.kodein.di:kodein-di:7.1.0")
+
+                implementation("com.squareup.sqldelight:runtime:1.4.4")
                 implementation("io.ktor:ktor-client-core:1.4.0")
                 implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
             }

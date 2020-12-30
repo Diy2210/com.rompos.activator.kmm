@@ -8,9 +8,7 @@ struct EditView: View {
     
     private var validated: Bool {
         !title.isEmpty && !url.isEmpty && !token.isEmpty
-        }
-    
-//    @State private var showAlert = false
+    }
     
     @Environment(\.presentationMode) var presentationMode
 
@@ -28,30 +26,41 @@ struct EditView: View {
                 .border(Color.black)
                 .padding(Edge.Set.vertical, 3)
                 .padding(Edge.Set.horizontal, 20)
-//            HStack(alignment: .center) {
-//                if validated {
-                
-//                Button(action:{self.presentationMode.wrappedValue.dismiss() }){
-//                    Text("cancel")
-//                }
-//                .padding(Edge.Set.vertical, 20)
-//                .padding(Edge.Set.horizontal, 20)
-//                Button(action:{self.presentationMode.wrappedValue.dismiss() }){
-//                    Text("save")
-//                }
-//                .padding(Edge.Set.vertical, 20)
-//                .padding(Edge.Set.horizontal, 20)
-//                }
-//            }
-//            .padding(Edge.Set.horizontal, 100)
-            
+        
 //            Text(title)
 //            Text(url)
 //            Text(token)
 //        }
+//        let bindingTitle = Binding<String>(
+//            get: {self.title},
+//            set: {_ in self.title = title})
+//        let bindingUrl = Binding<String>(
+//            get: {self.url},
+//            set: {_ in self.url = url})
+//        let bindingToken = Binding<String>(
+//            get: {self.token},
+//            set: {_ in self.token = token})
+//
+//        return VStack(alignment: .leading) {
+//            TextField(" Title", text: bindingTitle)
+//                .border(Color.black)
+//                .padding(Edge.Set.vertical, 3)
+//                .padding(Edge.Set.horizontal, 20)
+//            TextField(" URL", text: bindingUrl)
+//                .border(Color.black)
+//                .padding(Edge.Set.vertical, 3)
+//                .padding(Edge.Set.horizontal, 20)
+//            TextField(" Token", text: bindingToken)
+//                .border(Color.black)
+//                .padding(Edge.Set.vertical, 3)
+//                .padding(Edge.Set.horizontal, 20)
+//                }
         .toolbar {
             if validated {
-                Button(action:{self.presentationMode.wrappedValue.dismiss() }) {
+                Button(action: {
+                    print(title, url, token)
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
                     Text("save")
                     }
                 }

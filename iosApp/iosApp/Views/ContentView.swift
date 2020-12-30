@@ -10,8 +10,18 @@ struct ContentView: View {
             VStack(alignment: .trailing) {
                 List(Servers.serverList) { item in
                     NavigationLink(destination:
-                        ServerDetailsView(item: item),isActive : self.$showSecondView) {
-                            ListView(item: item)
+                        ServerDetailsView(item: item), isActive : self.$showSecondView) {
+                        ListView(item: item)
+                            .contextMenu {
+                                NavigationLink(destination: EditView()) {
+                                    Text("Edit")
+                                    Image(systemName: "pencil")
+                            }
+                                NavigationLink(destination: EditView()) {
+                                    Text("Delete")
+                                    Image(systemName: "trash")
+                            }
+                        }
                     }
                 }
                 .navigationTitle("Compoza.net")

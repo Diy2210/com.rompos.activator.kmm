@@ -9,6 +9,8 @@ struct ServerDetailsView: View {
             Text(item.title).font(.title)
             Text(item.url).font(.body)
         }
+        .navigationBarTitle(item.title, displayMode: .inline)
+//        .navigationTitle(item.title)
     }
 }
 

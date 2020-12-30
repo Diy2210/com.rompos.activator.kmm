@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ListView: View {
     
+    @State private var showEditView = true
+    
     var item: ServerModel
     
     var body: some View {
@@ -10,24 +12,10 @@ struct ListView: View {
                 Text(item.title)
                     .font(.headline)
                     .fontWeight(.bold)
-                    .contextMenu {
-                        menuItems
-                }
                 Text(item.url)
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
                     .lineLimit(2)
-            }
-        }
-    }
-    
-    var menuItems: some View {
-        Group {
-            NavigationLink(destination: EditView()) {
-                Text("Edit")
-            }
-            NavigationLink(destination: EditView()) {
-                Text("Delete")
             }
         }
     }

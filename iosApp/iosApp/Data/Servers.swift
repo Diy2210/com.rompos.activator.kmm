@@ -45,7 +45,7 @@ static let serverList: [ServerModel] = [
         token: "12345"),
     ServerModel(
         title: "Test10",
-        url: "test20.com",
+        url: "test10.com",
         token: "12345"),
 ]
 }

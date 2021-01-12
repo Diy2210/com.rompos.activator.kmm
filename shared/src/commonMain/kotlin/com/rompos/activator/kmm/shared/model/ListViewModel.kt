@@ -9,7 +9,6 @@ import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import org.kodein.di.instance
 
 class ListViewModel : ViewModel() {
-
     private val repository: ServersRepository by myApp.kodein.instance()
     var list: List<Server> = emptyList()
     private val _servers: MutableLiveData<List<Server>> = MutableLiveData(list)

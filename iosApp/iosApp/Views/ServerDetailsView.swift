@@ -1,21 +1,21 @@
 import SwiftUI
+import shared
 
 struct ServerDetailsView: View {
     
-    var item: ServerModel
+    var server: Server
     
     var body: some View {
         VStack {
-            Text(item.title).font(.title)
-            Text(item.url).font(.body)
+            Text(server.title!).font(.title)
         }
-        .navigationBarTitle(item.title, displayMode: .inline)
+//        .navigationBarTitle(item.title, displayMode: .inline)
 //        .navigationTitle(item.title)
     }
 }
 
 struct ServerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ServerDetailsView(item: ServerModel(title: "", url: "", token: ""))
+        ServerDetailsView(server: Server(ID: 0, title: "", url: "", token: ""))
     }
 }

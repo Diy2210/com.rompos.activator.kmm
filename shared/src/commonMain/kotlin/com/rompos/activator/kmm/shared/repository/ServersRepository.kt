@@ -5,7 +5,6 @@ import com.rompos.activator.kmm.databes.Servers
 import com.rompos.activator.kmm.Server
 
 class ServersRepository(slqDriver: SqlDriver) {
-
     private val database = Servers(slqDriver)
     private val serverQueries = database.serverQueries
 

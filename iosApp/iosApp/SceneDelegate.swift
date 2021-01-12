@@ -1,13 +1,17 @@
 import UIKit
 import SwiftUI
+import shared
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    let sdk = ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory())
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        let contentView = ContentView()
+//        let contentView = ContentView()
+        let contentView = ContentView(viewModel: .init(sdk: sdk))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

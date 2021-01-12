@@ -16,9 +16,9 @@ class PluginActivatorApi {
 
     suspend fun updatePluginStatus(server: Server, pluginModel: PluginModel, state: Boolean): String {
         var status = "deactivate"
-        if (state) {
-            status = "activate"
-        }
+            if (state) {
+                status = "activate"
+            }
         val params = Parameters.build {
             append("token", server.token.toString())
             append("id", pluginModel.plugin)

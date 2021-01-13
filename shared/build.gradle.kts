@@ -38,6 +38,7 @@ kotlin {
                 implementation("dev.icerock.moko:graphics:0.5.0")
                 implementation("dev.icerock.moko:parcelize:0.5.0")
 
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
                 implementation("org.kodein.di:kodein-di:7.1.0")

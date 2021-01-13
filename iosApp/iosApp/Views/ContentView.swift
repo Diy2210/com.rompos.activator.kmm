@@ -25,7 +25,7 @@ struct ContentView: View {
                 return AnyView(Text("Loading...").multilineTextAlignment(.center))
             case .result(let servers):
                 return AnyView(List(servers) { item in
-                    ServerItem(server: item)
+                    ListView(server: item)
                 })
             case .error(let description):
                 return AnyView(Text(description).multilineTextAlignment(.center))

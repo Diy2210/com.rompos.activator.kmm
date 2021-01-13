@@ -8,6 +8,9 @@ CREATE TABLE server (
 selectAll:
 SELECT * FROM server;
 
+selectAllServers:
+SELECT server.* FROM server;
+
 insert:
 INSERT INTO server (
     title,

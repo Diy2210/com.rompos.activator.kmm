@@ -16,6 +16,15 @@ interface ServerQueries : Transacter {
 
   fun selectAll(): Query<Server>
 
+  fun <T : Any> selectAllServers(mapper: (
+    ID: Long,
+    title: String?,
+    url: String?,
+    token: String?
+  ) -> T): Query<T>
+
+  fun selectAllServers(): Query<Server>
+
   fun <T : Any> selectByID(ID: Long, mapper: (
     ID: Long,
     title: String?,

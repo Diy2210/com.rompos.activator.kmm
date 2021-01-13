@@ -56,6 +56,8 @@ private class ServerQueriesImpl(
 ) : TransacterImpl(driver), ServerQueries {
   internal val selectAll: MutableList<Query<*>> = copyOnWriteList()
 
+  internal val selectAllServers: MutableList<Query<*>> = copyOnWriteList()
+
   internal val selectByID: MutableList<Query<*>> = copyOnWriteList()
 
   override fun <T : Any> selectAll(mapper: (
@@ -74,6 +76,30 @@ private class ServerQueriesImpl(
   }
 
   override fun selectAll(): Query<Server> = selectAll { ID, title, url, token ->
+    Server(
+      ID,
+      title,
+      url,
+      token
+    )
+  }
+
+  override fun <T : Any> selectAllServers(mapper: (
+    ID: Long,
+    title: String?,
+    url: String?,
+    token: String?
+  ) -> T): Query<T> = Query(927218337, selectAllServers, driver, "Server.sq", "selectAllServers",
+      "SELECT server.* FROM server") { cursor ->
+    mapper(
+      cursor.getLong(0)!!,
+      cursor.getString(1),
+      cursor.getString(2),
+      cursor.getString(3)
+    )
+  }
+
+  override fun selectAllServers(): Query<Server> = selectAllServers { ID, title, url, token ->
     Server(
       ID,
       title,
@@ -123,7 +149,7 @@ private class ServerQueriesImpl(
       bindString(3, token)
     }
     notifyQueries(-1690584561, {database.serverQueries.selectAll +
-        database.serverQueries.selectByID})
+        database.serverQueries.selectAllServers + database.serverQueries.selectByID})
   }
 
   override fun update(
@@ -145,7 +171,7 @@ private class ServerQueriesImpl(
       bindLong(4, ID)
     }
     notifyQueries(-1345638369, {database.serverQueries.selectAll +
-        database.serverQueries.selectByID})
+        database.serverQueries.selectAllServers + database.serverQueries.selectByID})
   }
 
   override fun deleteByID(ID: Long) {
@@ -153,7 +179,7 @@ private class ServerQueriesImpl(
       bindLong(1, ID)
     }
     notifyQueries(-212278189, {database.serverQueries.selectAll +
-        database.serverQueries.selectByID})
+        database.serverQueries.selectAllServers + database.serverQueries.selectByID})
   }
 
   private inner class SelectByIDQuery<out T : Any>(

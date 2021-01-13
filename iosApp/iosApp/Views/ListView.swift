@@ -1,7 +1,7 @@
 import SwiftUI
 import shared
 
-struct ServerItem: View {
+struct ListView: View {
     
     @State private var showEditView = true
     

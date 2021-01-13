@@ -7,12 +7,14 @@ import com.rompos.activator.kmm.Server
 
 @Parcelize
 data class ServerViewModel(
+    var ID: Long? = null,
     var title: String? = null,
     var url: String? = null,
     var token: String? = null
 ): ViewModel(), Parcelable {
 
     fun setModel(server: Server) : ServerViewModel {
+        ID = server.ID
         title = server.title.toString()
         url = server.url.toString()
         token = server.token.toString()

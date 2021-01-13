@@ -13,6 +13,24 @@ class Database(databaseDriverFactory: DatabaseDriverFactory) {
         return serverQueries.selectAll().executeAsList()
     }
 
+//    internal fun getAllServers(): List<Server> {
+//        return serverQueries.selectAllServers(::mapServers).executeAsList()
+//    }
+//
+//    private fun mapServers(
+//        ID: Long,
+//        title: String,
+//        url: String,
+//        token: String
+//    ): Server {
+//            return Server(
+//                ID = ID,
+//                title = title,
+//                url = url,
+//                token = token
+//        )
+//    }
+
     fun get(id: Long): Server {
         return serverQueries.selectByID(id).executeAsOne()
     }

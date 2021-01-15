@@ -3,6 +3,8 @@ import shared
 
 struct ServerDetailsView: View {
     
+    @State private var serverId: Int = 0
+    
     var server: Server
     
     var body: some View {
@@ -14,8 +16,8 @@ struct ServerDetailsView: View {
     }
 }
 
-struct ServerDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ServerDetailsView(server: Server(ID: 0, title: "", url: "", token: ""))
-    }
-}
+//struct ServerDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ServerDetailsView(server: Server(ID: 0, title: "", url: "", token: ""))
+//    }
+//}

@@ -9,7 +9,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-                listView()
+            listView()
                 .navigationTitle("Compoza.net")
                 .toolbar {
                     NavigationLink(destination: EditView()) {
@@ -18,17 +18,29 @@ struct ContentView: View {
             }
         }
     }
-        
-    private func listView() -> AnyView {
+    
+    func listView() -> AnyView {
         switch viewModel.loadableServers {
-            case .loading:
-                return AnyView(Text("Loading...").multilineTextAlignment(.center))
-            case .result(let servers):
-                return AnyView(List(servers) { item in
+        case .loading:
+            return AnyView(Text("Loading...").multilineTextAlignment(.center))
+        case .result(let servers):
+            return AnyView(List(servers) { item in
+                NavigationLink(destination: ServerDetailsView(server: item), isActive : self.$showSecondView) {
                     ListView(server: item)
-                })
-            case .error(let description):
-                return AnyView(Text(description).multilineTextAlignment(.center))
+                        .contextMenu {
+                            NavigationLink(destination: EditView()) {
+                                Text("Edit")
+                                Image(systemName: "pencil")
+                            }
+                            NavigationLink(destination: EditView()) {
+                                Text("Delete")
+                                Image(systemName: "trash")
+                    }
+                }
+            }
+        })
+        case .error(let description):
+            return AnyView(Text(description).multilineTextAlignment(.center))
         }
     }
 }
@@ -44,12 +56,12 @@ extension ContentView {
     class ViewModel: ObservableObject {
         let sdk: ActivatorSDK
         @Published var loadableServers = LoadableServers.loading
-
+        
         init(sdk: ActivatorSDK) {
             self.sdk = sdk
             self.loadServers(forceReload: false)
         }
-
+        
         func loadServers(forceReload: Bool) {
             self.loadableServers = .loading
             sdk.getServers(forceReload: forceReload, completionHandler: { servers, error in
@@ -63,5 +75,4 @@ extension ContentView {
     }
 }
 
-extension ServerViewModel: Identifiable { }
 extension Server: Identifiable { }

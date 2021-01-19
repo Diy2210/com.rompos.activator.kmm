@@ -12,8 +12,8 @@ struct ContentView: View {
             listView()
                 .navigationTitle("Compoza.net")
                 .toolbar {
-                    NavigationLink(destination: EditView()) {
-                        Image(systemName: "plus")
+                    NavigationLink(destination: EditView(serverID: 0)) {
+                        Image(systemName: "plus.circle.fill")
                 }
             }
         }

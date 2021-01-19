@@ -8,18 +8,22 @@ import com.rompos.activator.kmm.shared.repository.Database
 
 class ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory) {
     private val database = Database(databaseDriverFactory)
-    lateinit var cachedServers: List<Server>
+    var cachedServers: List<Server> = emptyList()
 //    lateinit var server: Server
 //    var list: List<Server> = emptyList()
 //    private var serverId: Long = 0
 
     suspend fun getServers(forceReload: Boolean): List<Server> {
-        val cachedServers = database.getAll()
+        cachedServers = database.getAll()
         return cachedServers
     }
 
     suspend fun saveServer(serverId: Long, model: ServerFormViewModel) {
         database.save(serverId, model.getModel(serverId))
+    }
+
+    suspend fun save(title: String, url: String, token: String) {
+        database.saveServer(title, url, token)
     }
 
     suspend fun deleteServer(item: Server) {

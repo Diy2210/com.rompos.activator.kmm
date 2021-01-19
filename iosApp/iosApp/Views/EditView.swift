@@ -4,13 +4,15 @@ import shared
 struct EditView: View {
     
 //    @ObservedObject private(set) var viewModel: ViewModel
+    
+    var serverID: Int = 0
 
-    @State private var serverId: Int = 0
+//    @State private var serverId: Int = 0
     @State private var title: String = ""
     @State private var url: String = ""
     @State private var token: String = ""
     
-//    var serverFormViewModel: ServerFormViewModel
+//    private var serverFormViewModel = ServerFormViewModel
     
     private var validated: Bool {
         !title.isEmpty && !url.isEmpty && !token.isEmpty
@@ -35,8 +37,8 @@ struct EditView: View {
         .toolbar {
             if validated {
                 Button(action: {
-                    print(title, url, token)
-                    saveRecord()
+                    print(title, url, token, serverID)
+                    saveRecord(title: title, url: url, token: token)
 //                    self.presentationMode.wrappedValue.dismiss()
                     })
                     { Text("save") }
@@ -45,7 +47,12 @@ struct EditView: View {
         }
     }
     
-    private func saveRecord() {
+//    init(sdk: ActivatorSDK) {
+//        self.sdk = sdk
+//    }
+    
+    private func saveRecord(title: String, url: String, token: String) {
+//        sdk.save(title: title, url: url, token: token, completionHandler: (KotlinUnit?, Error?) -> Void)
         self.presentationMode.wrappedValue.dismiss()
     }
 }
@@ -67,4 +74,5 @@ struct EditView: View {
 //    }
 //}
 
-extension ServerFormViewModel: Identifiable { }
+//extension ServerFormViewModel: Identifiable { }
+//extension ActivatorSDK: Identifiable { }

@@ -56,6 +56,10 @@ class Database(databaseDriverFactory: DatabaseDriverFactory) {
         serverQueries.insert(title, url, token)
     }
 
+    fun updateServer(title: String, url: String, token: String, id: Long) {
+        serverQueries.update(title, url, token, id)
+    }
+
     fun delete(id: Long) {
         serverQueries.deleteByID(id)
     }

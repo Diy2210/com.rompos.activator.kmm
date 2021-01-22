@@ -44,7 +44,7 @@ kotlin {
                 implementation("org.kodein.di:kodein-di:7.1.0")
 
                 implementation("com.squareup.sqldelight:runtime:1.4.4")
-                implementation("io.ktor:ktor-client-core:1.4.0")
+                implementation("io.ktor:ktor-client-core:1.5.0")
                 implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
             }
         }
@@ -61,20 +61,20 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
                 implementation("com.google.android.material:material:1.2.1")
                 implementation("com.squareup.sqldelight:android-driver:1.4.4")
-                implementation("io.ktor:ktor-client-android:1.4.0")
+                implementation("io.ktor:ktor-client-android:1.5.0")
             }
         }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13")
+                implementation("junit:junit:4.13.1")
             }
         }
         val iosMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.7")
                 implementation("com.squareup.sqldelight:native-driver:1.4.4")
-                implementation("io.ktor:ktor-client-ios:1.4.0")
+                implementation("io.ktor:ktor-client-ios:1.5.0")
             }
         }
         val iosTest by getting

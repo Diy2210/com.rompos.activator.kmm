@@ -28,11 +28,11 @@ struct ContentView: View {
                 NavigationLink(destination: ServerDetailsView(server: item), isActive : self.$showSecondView) {
                     ListView(server: item)
                         .contextMenu {
-                            NavigationLink(destination: EditView()) {
+                            NavigationLink(destination: EditView(serverID: 0)) {
                                 Text("Edit")
                                 Image(systemName: "pencil")
                             }
-                            NavigationLink(destination: EditView()) {
+                            NavigationLink(destination: EditView(serverID: 0)) {
                                 Text("Delete")
                                 Image(systemName: "trash")
                     }

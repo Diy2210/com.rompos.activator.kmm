@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D9B794025A5FAD600734C06 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B793F25A5FAD600734C06 /* ListView.swift */; };
+		1DF3308D25B84B550027C6A9 /* EditHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3308C25B84B550027C6A9 /* EditHelper.swift */; };
 		1DF7C8D42588E0B600B16E93 /* ServerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7C8D32588E0B600B16E93 /* ServerDetailsView.swift */; };
 		1DF7C8DE2588E0F900B16E93 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7C8DD2588E0F900B16E93 /* EditView.swift */; };
 		7555FF7F242A565900829871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF7E242A565900829871 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		1D9B793F25A5FAD600734C06 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		1DF3308C25B84B550027C6A9 /* EditHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHelper.swift; sourceTree = "<group>"; };
 		1DF7C8D32588E0B600B16E93 /* ServerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDetailsView.swift; sourceTree = "<group>"; };
 		1DF7C8DD2588E0F900B16E93 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DF3309025B84D600027C6A9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1DF3308C25B84B550027C6A9 /* EditHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1DF7C8C62588DFDF00B16E93 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				1DF3309025B84D600027C6A9 /* Helpers */,
 				1DF7C8C62588DFDF00B16E93 /* Views */,
 				7555FF7E242A565900829871 /* AppDelegate.swift */,
 				7555FF80242A565900829871 /* SceneDelegate.swift */,
@@ -339,6 +350,7 @@
 				1DF7C8DE2588E0F900B16E93 /* EditView.swift in Sources */,
 				1DF7C8D42588E0B600B16E93 /* ServerDetailsView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				1DF3308D25B84B550027C6A9 /* EditHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

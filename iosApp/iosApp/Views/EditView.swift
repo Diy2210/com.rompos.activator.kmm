@@ -3,17 +3,15 @@ import shared
 
 struct EditView: View {
     
-//    @ObservedObject private(set) var viewModel: ViewModel
+    @ObservedObject var editHelper = EditHelper()
     
     var serverID: Int = 0
 
-//    @State private var serverId: Int = 0
     @State private var title: String = ""
     @State private var url: String = ""
     @State private var token: String = ""
     
-//    private var serverFormViewModel = ServerFormViewModel
-    
+
     private var validated: Bool {
         !title.isEmpty && !url.isEmpty && !token.isEmpty
     }
@@ -37,9 +35,14 @@ struct EditView: View {
         .toolbar {
             if validated {
                 Button(action: {
+                    if (serverID > 0) {
+                        //Update Server
+                        updateServer(title: title, url: url, token: token, id: serverID)
+                    } else {
+                        //Save Server
+                        saveServer(title: title, url: url, token: token)
+                    }
                     print(title, url, token, serverID)
-                    saveRecord(title: title, url: url, token: token)
-//                    self.presentationMode.wrappedValue.dismiss()
                     })
                     { Text("save") }
                 }
@@ -47,32 +50,13 @@ struct EditView: View {
         }
     }
     
-//    init(sdk: ActivatorSDK) {
-//        self.sdk = sdk
-//    }
+    private func saveServer(title: String, url: String, token: String) {
+        editHelper.saveServer(title: title, url: url, token: token)
+        self.presentationMode.wrappedValue.dismiss()
+    }
     
-    private func saveRecord(title: String, url: String, token: String) {
-//        sdk.save(title: title, url: url, token: token, completionHandler: (KotlinUnit?, Error?) -> Void)
+    private func updateServer(title: String, url: String, token: String, id: Int) {
+        editHelper.updateServer(title: title, url: url, token: token, id: serverID)
         self.presentationMode.wrappedValue.dismiss()
     }
 }
-
-//extension EditView {
-//
-//    class ViewModel: ObservableObject {
-//        let sdk: ActivatorSDK
-//
-//        init(sdk: ActivatorSDK) {
-//            self.sdk = sdk
-//        }
-//    }
-//}
-
-//struct EditView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditView()
-//    }
-//}
-
-//extension ServerFormViewModel: Identifiable { }
-//extension ActivatorSDK: Identifiable { }

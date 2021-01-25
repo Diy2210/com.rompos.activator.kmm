@@ -31,6 +31,8 @@ struct ContentView: View {
                             NavigationLink(destination: EditView(serverID: 0)) {
                                 Text("Edit")
                                 Image(systemName: "pencil")
+                            }.onTapGesture {
+                                print(item)
                             }
                             NavigationLink(destination: EditView(serverID: 0)) {
                                 Text("Delete")

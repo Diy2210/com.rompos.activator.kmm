@@ -5,29 +5,26 @@ import shared
 
 class EditHelper: ObservableObject {
     
-//    @Published var serverID: Int = 0
-//    @Published var serverFormViewModel = ServerFormViewModel()
     let sdk = ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory())
-//    @Published var server = ServerFormViewModel()
-//    let sdk: ActivatorSDK
     
-    func get(id: Int) {
-    }
-    
-    func save(id: Int, model: ServerFormViewModel) {
-//        sdk.saveServer(serverId: id, model: ServerFormViewModel, completionHandler: { })
-    }
-    
+    //Save new server
     func saveServer(title: String, url: String, token: String) {
-//        sdk.saveServer(title: title, url: url, token: token, completionHandler: { }) in
-            
+        sdk.saveServer(title: title, url: url, token: token, completionHandler: { title, error in
+            if let title = title { print(title) }
+        }) 
     }
     
-    func updateServer(title: String, url: String, token: String, id: Int) {
-//        sdk.updateServer(title: title, url: url, token: token, id: id, completionHandler: { })
+    //Update server by id
+    func updateServer(title: String, url: String, token: String, id: Int64) {
+        sdk.updateServer(title: title, url: url, token: token, id: id, completionHandler: { title, error in
+            if let title = title { print(title) }
+        })
     }
     
-    func delete(id: Int) {
-//        sdk.deleteServer(id: id, completionHandler: { })
+    //Delete server by id
+    func deleteServer(id: Int64) {
+        sdk.deleteServer(id: id, completionHandler: { id, error in
+            if let id = id { print(id) }
+        })
     }
 }

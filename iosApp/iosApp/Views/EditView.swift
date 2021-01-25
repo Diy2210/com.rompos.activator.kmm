@@ -3,9 +3,11 @@ import shared
 
 struct EditView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var editHelper = EditHelper()
     
-    var serverID: Int = 0
+    var serverID: Int64 = 0
 
     @State private var title: String = ""
     @State private var url: String = ""
@@ -16,8 +18,6 @@ struct EditView: View {
         !title.isEmpty && !url.isEmpty && !token.isEmpty
     }
     
-    @Environment(\.presentationMode) var presentationMode
-
     var body: some View {
         VStack(alignment: .leading) {
             TextField(" Title", text: $title)
@@ -42,7 +42,7 @@ struct EditView: View {
                         //Save Server
                         saveServer(title: title, url: url, token: token)
                     }
-                    print(title, url, token, serverID)
+//                    print(title, url, token, serverID)
                     })
                     { Text("save") }
                 }
@@ -55,7 +55,7 @@ struct EditView: View {
         self.presentationMode.wrappedValue.dismiss()
     }
     
-    private func updateServer(title: String, url: String, token: String, id: Int) {
+    private func updateServer(title: String, url: String, token: String, id: Int64) {
         editHelper.updateServer(title: title, url: url, token: token, id: serverID)
         self.presentationMode.wrappedValue.dismiss()
     }

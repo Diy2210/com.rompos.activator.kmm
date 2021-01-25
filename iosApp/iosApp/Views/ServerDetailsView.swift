@@ -3,7 +3,7 @@ import shared
 
 struct ServerDetailsView: View {
     
-    @State private var serverId: Int = 0
+    @State private var serverId: Int64 = 0
     
     var server: Server
     

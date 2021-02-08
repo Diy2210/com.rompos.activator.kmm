@@ -12,8 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         let contentView = ContentView(viewModel: .init(sdk: sdk))
-//        let editView = EditView(editViewModel: .init(sdk: sdk))
-        _ = EditView().environmentObject(EditHelper())
+        _ = EditView().environmentObject(Helper())
+        _ = ServerDetailsView().environmentObject(Helper())
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

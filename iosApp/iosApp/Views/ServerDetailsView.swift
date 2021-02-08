@@ -3,21 +3,34 @@ import shared
 
 struct ServerDetailsView: View {
     
-    @State private var serverId: Int64 = 0
+    @Environment(\.presentationMode) var presentationMode
     
-    var server: Server
+    @ObservedObject var helper = Helper()
+    
+//    var server: Server
+    
+    @State var isOn: Bool = false
+    
+    var title: String = ""
+    
+//    let listPlugins: [PluginItem]
+    
+//    var plugin: PluginModel
     
     var body: some View {
-        VStack {
-            Text(server.title!).font(.title)
+        NavigationView {
+//            List(listPlugins, id: \.plugin.id) { item in
+                //Action
+//            }
+            Text(title)
         }
-//        .navigationBarTitle(item.title, displayMode: .inline)
-//        .navigationTitle(item.title)
+    }
+    
+    func getPluginsList(server: Server) {
+        //
+        helper.getPluginList(server: server)
     }
 }
 
-//struct ServerDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ServerDetailsView(server: Server(ID: 0, title: "", url: "", token: ""))
-//    }
-//}
+extension PluginModel: Identifiable { }
+//extension PluginItem: Identifiable { }

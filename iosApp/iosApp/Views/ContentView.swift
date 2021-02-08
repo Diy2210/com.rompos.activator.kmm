@@ -25,8 +25,8 @@ struct ContentView: View {
             return AnyView(Text("Loading...").multilineTextAlignment(.center))
         case .result(let servers):
             return AnyView(List(servers) { item in
-                NavigationLink(destination: ServerDetailsView(server: item), isActive : self.$showSecondView) {
-                    ListView(server: item)
+                NavigationLink(destination: ServerDetailsView(title: item.title!), isActive : self.$showSecondView) {
+                    ServerItem(server: item)
                         .contextMenu {
                             NavigationLink(destination: EditView(serverID: 0)) {
                                 Text("Edit")
@@ -41,8 +41,8 @@ struct ContentView: View {
                 }
             }
         })
-        case .error(let description):
-            return AnyView(Text(description).multilineTextAlignment(.center))
+        case .error(let error):
+            return AnyView(Text(error).multilineTextAlignment(.center))
         }
     }
 }

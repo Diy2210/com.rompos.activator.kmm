@@ -38,13 +38,20 @@ kotlin {
                 implementation("dev.icerock.moko:graphics:0.5.0")
                 implementation("dev.icerock.moko:parcelize:0.5.0")
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+//                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt") {
+                    version {
+                        strictly("1.4.2")
+                    }
+                }
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+//                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.1")
                 implementation("org.kodein.di:kodein-di:7.1.0")
 
                 implementation("com.squareup.sqldelight:runtime:1.4.4")
                 implementation("io.ktor:ktor-client-core:1.5.0")
+                implementation("io.ktor:ktor-client-serialization:1.5.0")
                 implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
             }
         }
@@ -72,7 +79,7 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.7")
+//                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.7")
                 implementation("com.squareup.sqldelight:native-driver:1.4.4")
                 implementation("io.ktor:ktor-client-ios:1.5.0")
             }

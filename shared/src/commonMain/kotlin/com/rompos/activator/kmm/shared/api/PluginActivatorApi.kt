@@ -6,9 +6,17 @@ import io.ktor.client.request.forms.submitForm
 import io.ktor.http.Parameters
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.*
+import kotlinx.serialization.json.Json
 
 class PluginActivatorApi {
-    private val client = HttpClient()
+    private val client = HttpClient() {
+        install(JsonFeature) {
+            val json = Json { ignoreUnknownKeys = true }
+            serializer = KotlinxSerializer(json)
+        }
+    }
 
     suspend fun getPluginsList(server: Server): String {
         return client.get("${server.url}/wp-json/deactivator/v1/list?token=${server.token}")

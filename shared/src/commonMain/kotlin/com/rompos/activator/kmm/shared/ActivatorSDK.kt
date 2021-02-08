@@ -2,25 +2,24 @@ package com.rompos.activator.kmm.shared
 
 import com.rompos.activator.kmm.Server
 import com.rompos.activator.kmm.shared.api.PluginActivatorApi
-import com.rompos.activator.kmm.shared.model.ServerFormViewModel
-import com.rompos.activator.kmm.shared.model.ServerViewModel
+import com.rompos.activator.kmm.shared.model.PluginModel
+import com.rompos.activator.kmm.shared.model.PluginResponseModel
 import com.rompos.activator.kmm.shared.repository.Database
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
 
 class ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory) {
     private val database = Database(databaseDriverFactory)
+    private val api = PluginActivatorApi()
+    lateinit var resp: PluginResponseModel
 
-    var cachedServers: List<Server> = emptyList()
-//    lateinit var server: Server
-//    var list: List<Server> = emptyList()
-//    private var serverId: Long = 0
+    var listServers: List<Server> = emptyList()
+    var listPlugins: List<PluginModel> = emptyList()
 
     suspend fun getServers(forceReload: Boolean): List<Server> {
-        cachedServers = database.getAll()
-        return cachedServers
-    }
-
-    suspend fun save(serverId: Long, model: ServerFormViewModel) {
-        database.save(serverId, model.getModel(serverId))
+        listServers = database.getAll()
+        return listServers
     }
 
     suspend fun saveServer(title: String, url: String, token: String) {
@@ -35,6 +34,34 @@ class ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory) {
         database.delete(id)
     }
 
-    suspend fun getPluginList() {
+    @Throws(Exception::class)
+    suspend fun getPluginList(server: Server): List<PluginModel> {
+        GlobalScope.launch {
+            try {
+                api.getPluginsList(server).also { response ->
+                    resp = Json.decodeFromString(PluginResponseModel.serializer(), response)
+                    if (resp.success) {
+                        listPlugins = resp.data
+                        println("Success")
+                    } else {
+                        println("Error")
+                    }
+                }
+            } catch (e: Exception) {
+                println("Server Error: $e")
+            }
+        }
+        return listPlugins
+    }
+
+    @Throws(Exception::class)
+    suspend fun updatePluginStatus(server: Server, pluginModel: PluginModel, state: Boolean) {
+        GlobalScope.launch {
+            try {
+                api.updatePluginStatus(server, pluginModel, state)
+            } catch (e: Exception) {
+                println("Server Error: $e")
+            }
+        }
     }
 }

@@ -21,6 +21,7 @@ class PluginViewModel : ViewModel() {
     private val _pluginsMutableLiveData: MutableLiveData<List<PluginModel>> =
         MutableLiveData(initialValue = List(1) {
             PluginModel(
+                0,
                 "Loading",
                 "Loading",
                 false

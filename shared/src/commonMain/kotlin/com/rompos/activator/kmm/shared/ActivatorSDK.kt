@@ -37,19 +37,19 @@ class ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory) {
     @Throws(Exception::class)
     suspend fun getPluginList(server: Server): List<PluginModel> {
         GlobalScope.launch {
-            try {
-                api.getPluginsList(server).also { response ->
-                    resp = Json.decodeFromString(PluginResponseModel.serializer(), response)
-                    if (resp.success) {
-                        listPlugins = resp.data
-                        println("Success")
-                    } else {
-                        println("Error")
-                    }
+//            try {
+            api.getPluginsList(server).also { response ->
+                resp = Json.decodeFromString(PluginResponseModel.serializer(), response)
+                if (resp.success) {
+                    listPlugins = resp.data
+                    println("Success")
+                } else {
+                    println("Error")
                 }
-            } catch (e: Exception) {
-                println("Server Error: $e")
             }
+//            } catch (e: Exception) {
+//                println("Server Error: $e")
+//            }
         }
         return listPlugins
     }
@@ -57,11 +57,11 @@ class ActivatorSDK(databaseDriverFactory: DatabaseDriverFactory) {
     @Throws(Exception::class)
     suspend fun updatePluginStatus(server: Server, pluginModel: PluginModel, state: Boolean) {
         GlobalScope.launch {
-            try {
-                api.updatePluginStatus(server, pluginModel, state)
-            } catch (e: Exception) {
-                println("Server Error: $e")
-            }
+//            try {
+            api.updatePluginStatus(server, pluginModel, state)
+//            } catch (e: Exception) {
+//                println("Server Error: $e")
+//            }
         }
     }
 }
